@@ -47,6 +47,7 @@
 					// get user's current location
 					$.mobile.loading( 'show');
 					navigator.geolocation.getCurrentPosition(function(position){
+						console.log("to getCurrentPosition epestrepse successfully");
 						var userLocation = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);	
 						// store Athens location
 						var athensLocation = new google.maps.LatLng(37.984110,23.728280);	
@@ -77,15 +78,22 @@
   						
   						service = new google.maps.places.PlacesService(map);
   						service.nearbySearch(request, callback);						
-					});									
+					},
+					
+					function(err) {
+						console.warn('ERROR in getCurrentPosition Call(' + err.code + '): ' + err.message);
+					}
+					
+					
+					);									
 				}				
 				function callback(results, status) {
+					console.log("to status apo to nearbySearch einai"+status);
 					if (status == google.maps.places.PlacesServiceStatus.OK) {
 						// for each place found create a list element
     					for (var i = 0; i < results.length; i++) {
       						var place = results[i];
       						$("#doctorsList").append("<li data-icon='arrow-r'><a onclick='selectedDoctor=\""+place.reference+"\"' href='doctor.html'><img  src='"+place.icon+"'/><h2>"+place.name+"</h2><p>"+place.vicinity+"</p></a></li>").listview('refresh');;    	  					
-    	  					console.log(place);
 	    				}
 	    				$.mobile.loading( 'hide');
   					}
