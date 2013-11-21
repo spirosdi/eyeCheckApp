@@ -1,0 +1,1 @@
+while true; do ./websocketd --port=8089 clips -f troubleshooter.clp; done
