@@ -17,7 +17,9 @@
 				    console.log(userCountry);
 					if(userCountry == 'GR')
 						window.lang.change('el');
+					navigator.splashscreen.hide();
 				}, "jsonp");
+				
 
 			});		
 			$(document).on('pagechange', function (event) {
