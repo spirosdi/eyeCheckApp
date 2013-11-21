@@ -50,8 +50,9 @@
             			//bind click event to next button
             			//$("#next").click(function() {
 							// setup websocket with callbacks
-							ws = new WebSocket('ws://54.194.22.198:8089/');
+							ws = new WebSocket('ws://54.194.22.198:8089/');							
 							ws.onopen = function() {
+								console.log('wsopen');
 								var idleInterval = setInterval(timerIncrement, 300); // 1 minute
 								console.log('connect');																									
 								connectionClosed=0;
