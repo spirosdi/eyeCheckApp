@@ -1,10 +1,12 @@
 symptomChecker
 ==============
 
-a Html/Javascript interface that interacts with server-side Clips interface using HTML5 WebSockets
+a Html/Javascript/jQuery Mobile interface that interacts with server-side Clips interface using HTML5 WebSockets. 
+The interface is PhoneGap packaged as an Android App (Eye CheckApp) and is available to download here:
+https://play.google.com/store/apps/details?id=com.phonegap.eyechekapp 
 Demo
 ----
-Check demo here (hosted in Amazon Web Services in a EC2 Ubuntu instance): http://54.194.22.198/diplomatiki/html/index.html (multilingual).
+Check demo here (hosted in Amazon Web Services in an EC2 Ubuntu instance): http://54.194.22.198/eyeCheckApp/eyeCheckApp/ (multilingual).
 Details
 -------
 server-side controller takes advantage of websocketd project (https://github.com/joewalnes/websocketd/) to wrap the CLIPS interface to a WebSocket interface.
