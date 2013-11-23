@@ -13,7 +13,11 @@
 		<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places&sensor=false"></script>	
 		<style>
 			#human-caption-text img {
-				vertical-align:top;
+				float: left;
+				margin-right: 10px;
+			}
+			#human-caption-text {
+				height: 190px;
 			}
 		</style>
 		<script>									
@@ -49,7 +53,6 @@
             			//$("#next" ).unbind();
             			//bind click event to next button
             			//$("#next").click(function() {
-            				debugger;
 							// setup websocket with callbacks
 							ws = new WebSocket('ws://54.194.22.198:8089/');							
 							ws.onopen = function() {
